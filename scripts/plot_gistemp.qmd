@@ -64,5 +64,5 @@ plt_gistemp = clean_dat |>
         annotate("text", x = 8, y = -4, size = 3.5, label = "Seasonal cycle from MERRA2. Figure: NASA/GISS/GISTEMP v4") +
         coord_cartesian(clip = "off")
 
-plt_gistemp
+# plt_gistemp
 ```
