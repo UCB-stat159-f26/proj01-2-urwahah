@@ -1,0 +1,68 @@
+---
+title: Plot 2 - GISTEMP Seasonal Cycle since 1880
+subtitle: "STAT 259"
+author: "Urwa Irfan"
+date: "`r Sys.Date()`"
+format: gfm
+embed-resources: true
+---
+
+## Load librares and data
+```{r libraries_constants}
+#| message: FALSE
+
+library(tidyverse)
+library(ggplot2)
+library(scales)
+
+dest_gistemp = "../data/data_gistemp.csv"
+```
+
+```{r load_data}
+dat = read_csv(dest_gistemp, skip = 1)
+```
+
+```{r clean_data}
+# extract month and clean year data
+months = tibble(
+    month_num = c(4, 13, 21, 29, 38, 46, 54, 63, 71, 79, 88, 96),
+    month = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+)
+
+clean_dat = dat |>
+    mutate(
+        year_actual = floor(Year),
+        month_num = round(100*(Year-year_actual))
+    ) |>
+    left_join(months, by = "month_num")
+
+clean_dat
+```
+
+```{r plot}
+#| fig-width: 6
+#| fig-height: 4
+plt_gistemp = clean_dat |>
+    ggplot(aes(month, Anomaly, color = year_actual, group = year_actual)) +
+        geom_line() +
+        geom_point(data = filter(clean_dat, year_actual==2026), color = "black", size = 0.8) +
+        scale_color_gradientn(colors = c("#5264fa", "#3968e6", "#4b9fbe", "#73bd97", "#94bd6b", "#bd9c42", "#e26332", "#b1231f", "#730073")) +
+        guides(color = guide_colorbar(reverse=TRUE)) +
+        scale_y_continuous(breaks = seq(-4, 3, 0.5), limits = c(-4, 3)) +
+        scale_x_continuous(breaks = seq(1, 12, 1), labels = month.abb) +
+        labs(
+            y = "Temperature Anomaly w.r.t. 1980-2015 (°C)",
+            x = "",
+            title = "GISTEMP Seasonal Cycle since 1880",
+        ) +
+        theme_classic() +
+        theme(
+            legend.position = "inside", legend.position.inside = c(0.03, 0.8), legend.title = element_blank(),
+            legend.justification="left", legend.background = element_rect(linewidth = 0.5, colour = "#e0e0e0"),
+            plot.title = element_text(size = 11, hjust = 0.5)
+        ) +
+        annotate("text", x = 8, y = -4, size = 3.5, label = "Seasonal cycle from MERRA2. Figure: NASA/GISS/GISTEMP v4") +
+        coord_cartesian(clip = "off")
+
+plt_gistemp
+```
