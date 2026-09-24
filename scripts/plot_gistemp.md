@@ -1,6 +1,6 @@
 # Plot 2 - GISTEMP Seasonal Cycle since 1880
 Urwa Irfan
-2026-09-22
+2026-09-24
 
 ## Load librares and data
 
@@ -60,6 +60,7 @@ clean_dat
 plt_gistemp = clean_dat |>
     ggplot(aes(month, Anomaly, color = year_actual, group = year_actual)) +
         geom_line() +
+        geom_point(data = filter(clean_dat, year_actual==2026), color = "black", size = 0.8) +
         scale_color_gradientn(colors = c("#5264fa", "#3968e6", "#4b9fbe", "#73bd97", "#94bd6b", "#bd9c42", "#e26332", "#b1231f", "#730073")) +
         guides(color = guide_colorbar(reverse=TRUE)) +
         scale_y_continuous(breaks = seq(-4, 3, 0.5), limits = c(-4, 3)) +
@@ -75,5 +76,12 @@ plt_gistemp = clean_dat |>
             legend.justification="left", legend.background = element_rect(linewidth = 0.5, colour = "#e0e0e0"),
             plot.title = element_text(size = 11, hjust = 0.5)
         ) +
-        annotate("text", x = 8, y = -4, size = 3.5, label = "Seasonal cycle from MERRA2. Figure: NASA/GISS/GISTEMP v4")
+        annotate("text", x = 8, y = -4, size = 3.5, label = "Seasonal cycle from MERRA2. Figure: NASA/GISS/GISTEMP v4") +
+        coord_cartesian(clip = "off")
+
+ggsave("../output/plot_gistemp.png", plot = plt_gistemp)
+ggsave("../output/plot_gistemp.pdf", plot = plt_gistemp)
+ggsave("tmp/plot_gistemp.png", plot = plt_gistemp, create.dir = TRUE)
 ```
+
+![](tmp/plot_gistemp.png)

@@ -27,6 +27,7 @@ dat = read_csv(dest_temp_anomalies, skip = 1)
 ```{r plot}
 #| fig-width: 6
 #| fig-height: 4
+#| message: FALSE
 
 plt_temp_anomalies = dat |>
     ggplot() +
@@ -54,4 +55,10 @@ plt_temp_anomalies = dat |>
             plot.title = element_text(size = 11, hjust = 0.5)
         ) +
         annotate("text", x = 2000, y = -0.8, size = 3.5, label = "NASA/GISS/GISTEMP v4")
+
+ggsave("../output/plot_temp_anomalies.png", plot = plt_temp_anomalies)
+ggsave("../output/plot_temp_anomalies.pdf", plot = plt_temp_anomalies)
+ggsave("tmp/plot_temp_anomalies.png", plot = plt_temp_anomalies, create.dir = TRUE)
 ```
+
+![](tmp/plot_temp_anomalies.png)

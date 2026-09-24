@@ -76,4 +76,10 @@ plt_mean_temp_change = combined_dat |>
         annotate("text", x = 2000, y = -0.6, size = 3.5, label = "NASA/GISS/GISTEMP v4")
 
 # plt_mean_temp_change
+
+ggsave("../output/plot_mean_temp_change.png", plot = plt_mean_temp_change)
+ggsave("../output/plot_mean_temp_change.pdf", plot = plt_mean_temp_change)
+ggsave("tmp/plot_mean_temp_change.png", plot = plt_mean_temp_change, create.dir = TRUE)
 ```
+
+![](tmp/plot_mean_temp_change.png)

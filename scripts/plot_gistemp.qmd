@@ -42,6 +42,9 @@ clean_dat
 ```{r plot}
 #| fig-width: 6
 #| fig-height: 4
+#| message: FALSE
+#| warning: FALSE
+
 plt_gistemp = clean_dat |>
     ggplot(aes(month, Anomaly, color = year_actual, group = year_actual)) +
         geom_line() +
@@ -64,5 +67,9 @@ plt_gistemp = clean_dat |>
         annotate("text", x = 8, y = -4, size = 3.5, label = "Seasonal cycle from MERRA2. Figure: NASA/GISS/GISTEMP v4") +
         coord_cartesian(clip = "off")
 
-# plt_gistemp
+ggsave("../output/plot_gistemp.png", plot = plt_gistemp)
+ggsave("../output/plot_gistemp.pdf", plot = plt_gistemp)
+ggsave("tmp/plot_gistemp.png", plot = plt_gistemp, create.dir = TRUE)
 ```
+
+![](tmp/plot_gistemp.png)

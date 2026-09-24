@@ -1,6 +1,6 @@
 # Plot 1 - Temperature Anomalies over Land and over Ocean
 Urwa Irfan
-2026-09-22
+2026-09-24
 
 ## Load librares and data
 
@@ -29,7 +29,7 @@ dat = read_csv(dest_temp_anomalies, skip = 1)
 ## Create plot
 
 ``` r
-dat |>
+plt_temp_anomalies = dat |>
     ggplot() +
         geom_line(aes(Year, Land_Annual, color = "land_annual"), linewidth = 0.5) +
         geom_point(aes(Year, Land_Annual, color = "land_annual"), shape = 15, size = 1.5) +
@@ -55,6 +55,10 @@ dat |>
             plot.title = element_text(size = 11, hjust = 0.5)
         ) +
         annotate("text", x = 2000, y = -0.8, size = 3.5, label = "NASA/GISS/GISTEMP v4")
+
+ggsave("../output/plot_temp_anomalies.png", plot = plt_temp_anomalies)
+ggsave("../output/plot_temp_anomalies.pdf", plot = plt_temp_anomalies)
+ggsave("tmp/plot_temp_anomalies.png", plot = plt_temp_anomalies, create.dir = TRUE)
 ```
 
-![](plot_temp_anomalies_files/figure-commonmark/plot-1.png)
+![](tmp/plot_temp_anomalies.png)

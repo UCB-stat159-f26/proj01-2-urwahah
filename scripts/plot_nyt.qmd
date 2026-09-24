@@ -40,10 +40,11 @@ nyt_dat = dat |>
 ```{r plot}
 #| fig-width: 6
 #| fig-height: 4
+#| message: FALSE
 
 y_labels = lapply(round(seq(-0.6, 1.2, 0.2), digits = 1), function(x) sprintf("%+2.1f", x))
 
-plt_mean_temp_change = nyt_dat |>    
+plt_nyt_mean_temp_change = nyt_dat |>    
     ggplot() +
         geom_hline(yintercept = 0, color = "#cccccc", linewidth = 0.3) +
         geom_line(aes(Year, No_Smoothing_NYT), color = "#909090", linewidth = 0.3) +
@@ -94,4 +95,10 @@ plt_mean_temp_change = nyt_dat |>
         annotate("text", x = 2018, y = 1.05, hjust = -0.2, vjust = 1, label = "2018", size = 2.5, fontface = 2)
 
 # plt_mean_temp_change
+
+ggsave("../output/plot_nyt_mean_temp_change.png", plot = plt_nyt_mean_temp_change)
+ggsave("../output/plot_nyt_mean_temp_change.pdf", plot = plt_nyt_mean_temp_change)
+ggsave("tmp/plot_nyt_mean_temp_change.png", plot = plt_nyt_mean_temp_change, create.dir = TRUE)
 ```
+
+![](tmp/plot_nyt_mean_temp_change.png)

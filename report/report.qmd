@@ -1,0 +1,19 @@
+---
+title: Project 1 - Replicating Temperature Anomalies Graphics
+subtitle: "STAT 259"
+author: "Urwa Irfan"
+date: "`r Sys.Date()`"
+format: html
+embed-resources: true
+---
+
+## Load librares and data
+```{r libraries_constants}
+#| message: FALSE
+
+library(tidyverse)
+library(ggplot2)
+library(scales)
+
+dest_mean_temp_change = "../data/data_mean_temp_change.csv"
+```
