@@ -16,5 +16,5 @@
 
 **Dependencies**: R 4.6.1, with the following packages: 
 - `tidyverse`
-- `ggplot`
+- `ggplot2`
 - `scales`

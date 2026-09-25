@@ -28,7 +28,7 @@ From the [GISTEMP FAQ](https://data.giss.nasa.gov/gistemp/faq/#q102a):
 Q. How can I estimate the anomaly with respect to the ‘pre-industrial’ (1850-1900) period?
 A. While the GISTEMP analysis only goes back to 1880, there are other estimates that go back further (notably the HadCRUT, NOAA and Berkeley Earth analyses), and using the average of those data, we can estimate the correction from our late 19th Century values (1880-1899), to the earlier baseline. This is a very small adjustment of about 0.038ºC. Therefore, to calculate the GISTEMP anomaly with respect to 1850-1900, we can adjust to 1880-1899 from 1951-1980, and then make that adjustment. _This is equivalent (as of Jan 2025), of adding ~0.19ºC._ Note that these numbers may change slightly in the future as more data is digitized or if the methodologies change. Note also, that anomalies with respect to the pre-industrial are more uncertain than anomalies w.r.t. a modern baseline.
 
-This does not exactly match the NYT plot, but I'm not sure how their values were generated and cannot replicate them.
+This does not exactly match the NYT plot, but it's unclear to me how their values were generated and I cannot exactly replicate them.
 
 ```{r modify_data}
 nyt_dat = dat |>

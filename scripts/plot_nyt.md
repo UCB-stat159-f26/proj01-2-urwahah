@@ -42,8 +42,8 @@ future as more data is digitized or if the methodologies change. Note
 also, that anomalies with respect to the pre-industrial are more
 uncertain than anomalies w.r.t. a modern baseline.
 
-This does not exactly match the NYT plot, but I’m not sure how their
-values were generated and cannot replicate them.
+This does not exactly match the NYT plot, but it’s unclear to me how
+their values were generated and I cannot exactly replicate them.
 
 ``` r
 nyt_dat = dat |>
