@@ -110,7 +110,6 @@ plt_nyt_mean_temp_change = nyt_dat |>
 
 ggsave("../output/plot_nyt_mean_temp_change.png", plot = plt_nyt_mean_temp_change)
 ggsave("../output/plot_nyt_mean_temp_change.pdf", plot = plt_nyt_mean_temp_change)
-ggsave("tmp/plot_nyt_mean_temp_change.png", plot = plt_nyt_mean_temp_change, create.dir = TRUE)
 ```
 
-![](tmp/plot_nyt_mean_temp_change.png)
+![](https://raw.githubusercontent.com/UCB-stat159-f26/proj01-2-urwahah/refs/heads/main/output/plot_nyt_mean_temp_change.png)

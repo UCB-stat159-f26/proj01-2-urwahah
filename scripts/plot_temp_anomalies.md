@@ -58,7 +58,6 @@ plt_temp_anomalies = dat |>
 
 ggsave("../output/plot_temp_anomalies.png", plot = plt_temp_anomalies)
 ggsave("../output/plot_temp_anomalies.pdf", plot = plt_temp_anomalies)
-ggsave("tmp/plot_temp_anomalies.png", plot = plt_temp_anomalies, create.dir = TRUE)
 ```
 
-![](tmp/plot_temp_anomalies.png)
+![](https://raw.githubusercontent.com/UCB-stat159-f26/proj01-2-urwahah/refs/heads/main/output/plot_temp_anomalies.png)

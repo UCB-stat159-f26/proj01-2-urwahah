@@ -81,7 +81,6 @@ plt_gistemp = clean_dat |>
 
 ggsave("../output/plot_gistemp.png", plot = plt_gistemp)
 ggsave("../output/plot_gistemp.pdf", plot = plt_gistemp)
-ggsave("tmp/plot_gistemp.png", plot = plt_gistemp, create.dir = TRUE)
 ```
 
-![](tmp/plot_gistemp.png)
+![](https://raw.githubusercontent.com/UCB-stat159-f26/proj01-2-urwahah/refs/heads/main/output/plot_gistemp.png)
