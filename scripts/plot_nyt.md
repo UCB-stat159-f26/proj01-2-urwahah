@@ -54,7 +54,7 @@ nyt_dat = dat |>
 ## Create plot
 
 ``` r
-y_labels = lapply(round(seq(-0.6, 1.2, 0.2), digits = 1), function(x) sprintf("%+2.1f", x))
+y_labels = lapply(round(seq(-0.4, 1.2, 0.2), digits = 1), function(x) sprintf("%+2.1f", x))
 
 plt_nyt_mean_temp_change = nyt_dat |>    
     ggplot() +
@@ -70,7 +70,7 @@ plt_nyt_mean_temp_change = nyt_dat |>
         ) +
         labs(x = "", y = "") +
         theme_light() +
-        scale_y_continuous(breaks = seq(-0.6, 1.2, 0.2), limits = c(-0.6, 1.4),
+        scale_y_continuous(breaks = seq(-0.4, 1.2, 0.2), limits = c(-0.4, 1.4),
             labels = str_c(y_labels, "°C")) +
         scale_x_continuous(breaks = seq(1880, 2010, 10)) +
         theme(
@@ -106,7 +106,7 @@ plt_nyt_mean_temp_change = nyt_dat |>
         annotate("text", x = 2016, y = 1.2, hjust = -0.1, vjust = -0.3, label = "2016", size = 2.5) +
         annotate("text", x = 2018, y = 1.05, hjust = -0.2, vjust = 1, label = "2018", size = 2.5, fontface = 2)
 
-# plt_mean_temp_change
+# plt_nyt_mean_temp_change
 
 ggsave("../output/plot_nyt_mean_temp_change.png", plot = plt_nyt_mean_temp_change)
 ggsave("../output/plot_nyt_mean_temp_change.pdf", plot = plt_nyt_mean_temp_change)
