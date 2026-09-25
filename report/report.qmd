@@ -9,7 +9,7 @@ embed-resources: true
 
 # Introduction
 
-This project replicates three graphics from NASA Goddard Institute for Space Studies (GISS) Surface Temperature Analysis (GISTEMP) version 4. The GISTEMP dataset is an estimate of global surface temperature change and includes data from 1880 to the present day. More information about these data and the raw files can be accessed [on NASA's website](https://data.giss.nasa.gov/gistemp/). A fourth graphic from the New York Times ([original article](https://www.nytimes.com/interactive/2019/02/06/climate/fourth-hottest-year.html)), which is a modified version of a GISTEMP graphic, is also replicated.
+This project attempts to replicate three graphics from NASA Goddard Institute for Space Studies (GISS) Surface Temperature Analysis (GISTEMP) version 4. The GISTEMP dataset is an estimate of global surface temperature change and includes data from 1880 to the present day. More information about these data and the raw files can be accessed [on NASA's website](https://data.giss.nasa.gov/gistemp/). A fourth graphic from the New York Times ([original article](https://www.nytimes.com/interactive/2019/02/06/climate/fourth-hottest-year.html)), which is a modified version of a GISTEMP graphic, is also included.
 
 # Graphics
 
