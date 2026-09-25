@@ -3,7 +3,7 @@ title: Project 1 - Replicating Temperature Anomalies Graphics
 subtitle: "STAT 259"
 author: "Urwa Irfan"
 date: "`r Sys.Date()`"
-format: html
+format: gfm
 embed-resources: true
 ---
 
